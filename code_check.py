@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 
 # array = ["1mky"]
@@ -8,8 +9,10 @@ def scrappy_fun(array):
     """Function used to retrieve the chain name : uniport for a given PDB id
     : array, will take the list of array of pdb_list
     """
-    value= []
     dic_1 ={}
+
+    patern = re.compile(r'\w+')
+    array_1= re.findall( patern, array[0])
      
     #avoiding the scrappy block as a scrapper, have to use headers and proxies
     headers = {
@@ -19,8 +22,9 @@ def scrappy_fun(array):
         "https": "http://172.16.2.251:3128" ,"https": "http://172.16.2.250:3128",
         "https": "http://172.16.2.252:3128"
     }
-
-    for i,r in enumerate(array):
+    print("your arra is" ,type(array_1))
+    print("your arra is" ,array_1)
+    for i,r in enumerate(array_1):
         print(i+1,r)
         pageurls = r"https://www.rcsb.org/structure/"+r[:4]
         url = requests.get(pageurls)
