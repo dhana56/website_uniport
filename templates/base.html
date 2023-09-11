@@ -1,23 +1,33 @@
-<!Doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!Doctype>
+<html lang='eng'>
+    <head>
+    <title>UNIPORT_ID</title>
+        {% block title %}
+        
+        {% endblock title %}
 
-<style>
-body {
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Light text color */
-}
-a {
-    color: #ffcc00; /* Light link color */
-}
-</style>
-{% block title %}{% endblock  %}
-</head>
+    </head>
+    <body>
+    <header>
+        <nav>
+            <ul>
+            <li>HOME</li>
+            <li>About</li>
+            <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+        <div>
+            <h3>Hello it a new page!</h3>
+            <p>It is showing the <strong>UNiport </strong> 
+                                                id of the page </p>
+            <p style ="color:RED;">It takes <small>PDB id </small> as a input </p>
+        </div>
 
- <body>
-    <h2>Welcome to the Uniport id retrieval page !</h2>
-    {% block content %}{% endblock %}
-</body>
+        <div>
+            {% block content %} {% endblock content %}
+        </div>
 
+
+    </body>
 </html>
