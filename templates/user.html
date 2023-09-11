@@ -1,1 +1,10 @@
-<h1> hello,{{user_name|capitalize}}</h1>
+{% extends "base.html" %} 
+
+{% block content %}
+
+<h3> Your output is:</h3>
+<h4> PDB id: {{uniport_id.keys()}}</h4>
+<h4> uniport id: {{uniport_id.values()|capitalize}}</h4>
+
+{% endblock %}
+s

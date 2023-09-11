@@ -9,9 +9,11 @@ app.config['SECRET_KEY'] = "isabella"
 def index():
     return render_template('index.html')
 
-@app.route('/user/<nam>')
-def user(nam):
-    return render_template("user.html", user_name =nam)
+@app.route('/uniport/<uniport_id>')
+def uniport(uniport_id):
+    uniport_id =scrappy_fun(["1mky"])
+    return render_template("user.html", uniport_id=uniport_id)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+# array = ["1mky"]
+
 
 def scrappy_fun(array):
     """Function used to retrieve the chain name : uniport for a given PDB id
