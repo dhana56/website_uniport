@@ -1,11 +1,9 @@
-{% extends "base.html" %} {# extending the base html #}
+{% extends "base.html" %} 
 
-{% block title %}
-{% endblock title %}
 {% block content %}
-<div class="container">
-    <h3 class="display-6 fw-bold lh-3">Results :</h3>
-</div>
+    <div class="container">
+        <h3 class="display-6 fw-bold lh-3">Results :</h3>
+    </div>
     <div class="container">
         <table class="table table-secondary table-sm">
             <caption>List of Uniport entries.</caption>
@@ -26,7 +24,7 @@
                                     <span>{{k}}</span>
                                     
                                 {% endfor %}
-                             </td>
+                            </td>
                             <td> {{j}} </td>    
                         </tr>
                         {% endfor %}
