@@ -13,7 +13,6 @@ def scrappy_fun(array):
 
     patern = re.compile(r'\w+')
     array_1= re.findall( patern, array[0])
-     
     #avoiding the scrappy block as a scrapper, have to use headers and proxies
     headers = {
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',

@@ -1,33 +1,30 @@
-<!Doctype>
-<html lang='eng'>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>UNIPORT_ID</title>
-        {% block title %}
-        
-        {% endblock title %}
-
+        {% block title %}{% endblock title %}
+        <h1 class="text-bg-secondary text-center pt-0 mx-auto mb-2 " style="width: 450px;">Uniport-id Retrieval</h1>
     </head>
-    <body>
-    <header>
-        <nav>
-            <ul>
-            <li>HOME</li>
-            <li>About</li>
-            <li>Contact</li>
-            </ul>
-        </nav>
-    </header>
-        <div>
-            <h3>Hello it a new page!</h3>
-            <p>It is showing the <strong>UNiport </strong> 
-                                                id of the page </p>
-            <p style ="color:RED;">It takes <small>PDB id </small> as a input </p>
-        </div>
 
-        <div>
+    <body >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+        crossorigin="anonymous">
+        <header>
+        </header>
+
+        <article> 
+            <div class="h4 bg-info-subtle text-center mx-auto p-3 ">
+                This website is for retrieving the uniport ids of each
+                protein chains in a PDB id entry.
+            </div>
+
+            <!-- Here write the contents for other html page -->
             {% block content %} {% endblock content %}
-        </div>
-
-
+        </article>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     </body>
 </html>

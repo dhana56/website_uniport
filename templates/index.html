@@ -1,21 +1,19 @@
 {% extends "base.html" %} 
 
 {% block title %}
-<h1>Home</h1>
+    <link rel="stylesheet" type="text/css" href="static\style.css">
+
 {% endblock title %}
 {% block content %}
-<div>
-    <form action=# method="post">
-        <label for="username"> Enter PDB id <label>
-        <input type="text" id="username" name="nam"> 
-        <br>    
-        <br>  
-        <label for="biometric">Multiple PDB ids </label><br>
-        <textarea name="biometric" id="biometric" cols='30' rows="10" placeholder="Enter pdb as">
-        </textarea><br><br>
-               
-        <input type="submit" id= "submit" name ="submit">
-    </form>
-</div>
-
+    <div class="container py-3">
+        <form action="#" method="post">
+            <div class="form-floating">
+                <textarea placeholder="Enter the PDB ids here:" id="floatingTextarea" name="floatingTextarea" 
+                class="form-control" style="height: 150px; width:600px" ></textarea>
+                <label for="floatingTextarea">Enter PDB ids:</label>
+                <br>
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}

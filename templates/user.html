@@ -1,10 +1,37 @@
 {% extends "base.html" %} {# extending the base html #}
 
+{% block title %}
+{% endblock title %}
 {% block content %}
-
-<h3> Your output is:</h3>
-<h4> PDB id: {{uniport_id.keys()}}</h4>
-<h4> uniport id: {{uniport_id.values()|capitalize}}</h4>
-
+<div class="container">
+    <h3 class="display-6 fw-bold lh-3">Results :</h3>
+</div>
+    <div class="container">
+        <table class="table table-secondary table-sm">
+            <caption>List of Uniport entries.</caption>
+            <thead class="table-dark">
+                <tr>
+                <th scope="col">PDBid</th>
+                <th scope="col">Chain</th>
+                <th scope="col">Uniport</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider" >
+                    {% for key,value in uniport_id.items() %}
+                        {% for i,j in value.items()%}
+                        <tr class="table-striped ">
+                            <td>  {{key}} </td>
+                            <td> 
+                                {% for k in i %}
+                                    <span>{{k}}</span>
+                                    
+                                {% endfor %}
+                             </td>
+                            <td> {{j}} </td>    
+                        </tr>
+                        {% endfor %}
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
-s
