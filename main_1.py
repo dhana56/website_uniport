@@ -26,19 +26,20 @@ def chain_crawl(html,x,y,r):
     else:
         return None
 
-
 def uni_id(array):
+    """Function for retrieving uniport ids.
+    :array: takes array of PDB ids
+    """
     patern = re.compile(r'\w+')
     array_1= re.findall( patern, array[0])
-    
     dic_1 = {}
+
     for k,l in enumerate(array_1):
         pageurls = r"https://www.rcsb.org/structure/"+l[:4]
         try:
             url = requests.get(pageurls)
         except requests.exceptions.RequestException as e:
             print("Connection ERROR")
-
         if url.status_code==200:   
             soup = BeautifulSoup(url.content, 'html.parser')
             const_v= soup
