@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 def scrappy_fun(array):
     """Function used to retrieve the chain name : uniport for a given PDB id
-    : array, will take the list of array of pdb_list
+    :array: will take the list of array of pdb_list
     """
     dic_1 ={}
     patern = re.compile(r'\w+')
@@ -18,7 +18,7 @@ def scrappy_fun(array):
         except requests.exceptions.RequestException as e:
             print("Connection ERROR")
             break
-        
+
         if url.status_code==200:   
             soup = BeautifulSoup(url.content, 'html.parser')
             chain_dic = {}
