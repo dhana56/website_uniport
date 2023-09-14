@@ -22,7 +22,7 @@
 >           |        |-- index.html
 >           |        |-- user.html
 >           |--app.py
->           |code_check_1.py </pre>
+>           |main_1.py </pre>
 >
 ## Website
 The demo view of the Uniport-id retrieval  website is shown below:<br>
