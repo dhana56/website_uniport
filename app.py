@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask import redirect, render_template,url_for
-from code_check_1 import scrappy_fun
+from main_1 import uni_id
 
 app = Flask(__name__)
 
@@ -16,9 +16,9 @@ def index():
 @app.route('/uniport/<uniport_id>')
 def uniport(uniport_id):
     if type(uniport_id) is not list:
-        due =scrappy_fun([uniport_id])
+        due =uni_id([uniport_id])
     else:
-        due =scrappy_fun(uniport_id)
+        due =uni_id(uniport_id)
     return render_template("user.html", uniport_id=due)
 
 if __name__ == '__main__':

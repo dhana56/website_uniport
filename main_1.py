@@ -1,9 +1,10 @@
 import requests
 import re
-import multiprocessing
+import threading
 from bs4 import BeautifulSoup
 
-def chain_crawl(html,x):
+
+def chain_crawl(html,x,y,r):
     """Function used for looping the chain tables in the PDB website.
     And retrieve the chain and uniport id of the chain
     :html: the html tags from beautifulsoup
@@ -20,18 +21,19 @@ def chain_crawl(html,x):
             uniport_id = uniport_2[0].text
         else:
             uniport_id = None
-        print(chain,uniport_id)
         chain_dic[chain] = uniport_id
-        return chain_dic
+        y[r] =chain_dic
     else:
         return None
+
+
+def uni_id(array):
+    patern = re.compile(r'\w+')
+    array_1= re.findall( patern, array[0])
     
-def sq(x,y):
-    return x**y
-
-if __name__ ==  "__main__":
-
-        pageurls = r"https://www.rcsb.org/structure/"+"1mky"
+    dic_1 = {}
+    for k,l in enumerate(array_1):
+        pageurls = r"https://www.rcsb.org/structure/"+l[:4]
         try:
             url = requests.get(pageurls)
         except requests.exceptions.RequestException as e:
@@ -40,31 +42,24 @@ if __name__ ==  "__main__":
         if url.status_code==200:   
             soup = BeautifulSoup(url.content, 'html.parser')
             const_v= soup
-            with multiprocessing.Pool(processes=2) as pool:
-                result = pool.starmap(chain_crawl, [(const_v, args) for args in [1,2,3,4,5]])
-                # result = pool.starmap(sq, [(3, args) for args in [1,2,3,4,5]])
-            print(result)
+            threds= []
+            for i in range(5):
+                thred= threading.Thread(target=chain_crawl, args=(const_v,i,dic_1,l[:4]))
+                threds.append(thred)
+                thred.start()
+            for j in threds:
+                thred.join()
         else:
             print(url.status_code, "Error")
             pass
 
+    return dic_1
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+        
+  
 
 
 
