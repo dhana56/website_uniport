@@ -1,8 +1,8 @@
 # Website: Uniport-id Retrieval 
 > The website is used for the retrieval of the uniport id of protein chain. It takes takes the list of PDB id as input and return the Uniport by chain name wise. This simple website is build from the Flask frameowrk.
 
-[!NOTE]
- Before Running the programic files, <br>
+> [!NOTE]
+>Before Running the programic files, <br>
  1. Set up virtual environment. For setting up the virtual environment, visit [here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
    
  2. After set up the virtual environment run [requirement.txt](requirement.txt) in the terminal window where the programic Folder is located.

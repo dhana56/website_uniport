@@ -2,9 +2,7 @@ from flask import Flask, render_template, request
 from flask import redirect, render_template,url_for
 from code_check_1 import scrappy_fun
 
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "isabella"
 
 @app.route('/', methods=["POST", "GET"])     #Routing url for the app.
 def index():
