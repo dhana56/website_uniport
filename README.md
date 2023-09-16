@@ -22,7 +22,7 @@
 >           |        |-- index.html
 >           |        |-- user.html
 >           |--app.py
->           |main_1.py </pre>
+>           |fun.py </pre>
 >
 ## Website
 The demo view of the Uniport-id retrieval  website is shown below:<br>
