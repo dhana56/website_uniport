@@ -3,14 +3,6 @@ import requests
 import re
 from multiprocessing import Pool
 
-
-# data retrieval
-path = r"C:\Users\dhana\Downloads\multiple_process\process\data\maindata.txt"
-with open(path) as file:
-    test_entry=  file.readlines()
-
-
-
 def scrappy_fun(r) -> dict:
     """Function used to retrieve the chain name : uniport for a given PDB id.
     :array: will take the list of array of pdb_list.
@@ -43,8 +35,6 @@ def scrappy_fun(r) -> dict:
         pass
     return dic_1
 
-ar = ["1mky","2hbr", "2mkr"]
-
 def uni_id(array):
     """Function for retrieving uniport ids.
     :array: takes array of PDB ids
@@ -60,10 +50,9 @@ def pool_process(fun, lis):
         number= len(lis)
     else:
         number = 20
-        
+
     with Pool(number) as pool:
         result = pool.map(fun,lis)
-
     return result
 
 
