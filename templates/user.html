@@ -15,18 +15,20 @@
             </tr>
             </thead>
             <tbody class="table-group-divider" >
-                    {% for key,value in uniport_id.items() %}
-                        {% for i,j in value.items()%}
-                        <tr class="table-striped ">
-                            <td>  {{key}} </td>
-                            <td> 
-                                {% for k in i %}
-                                    <span>{{k}}</span>
-                                    
-                                {% endfor %}
-                            </td>
-                            <td> {{j}} </td>    
-                        </tr>
+                    {% for values in uniport_id%}
+                        {% for key, value in values.items() %}
+                            {% for i,j in value.items()%}
+                            <tr class="table-striped ">
+                                <td>  {{key}} </td>
+                                <td> 
+                                    {% for k in i %}
+                                        <span>{{k}}</span>
+                                        
+                                    {% endfor %}
+                                </td>
+                                <td> {{j}} </td>    
+                            </tr>
+                            {% endfor %}
                         {% endfor %}
                     {% endfor %}
             </tbody>

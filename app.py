@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask import redirect, render_template,url_for
-from main_1 import uni_id
+# from main_1 import uni_id
+from fun import scrappy_fun, uni_id, pool_process
 
 app = Flask(__name__)
 
@@ -19,7 +20,8 @@ def uniport(uniport_id):
         due =uni_id([uniport_id])
     else:
         due =uni_id(uniport_id)
-    return render_template("user.html", uniport_id=due)
+    out_put = pool_process(scrappy_fun,due)
+    return render_template("user.html", uniport_id=out_put)
 
 if __name__ == '__main__':
     app.run(debug=True)
