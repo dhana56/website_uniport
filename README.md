@@ -1,5 +1,5 @@
-# Website: Uniport-id Retrieval 
-> The website is used for the retrieval of the uniport id of protein chain. It takes takes the list of PDB id as input and return the Uniport by chain name wise. This simple website is build from the Flask frameowrk.
+# Website: UniProt-id Retrieval 
+> The website is used for the retrieval of the UniProt id of protein chain. It takes takes the list of PDB id as input and return the Uniport by chain name wise. This simple website is build from the Flask frameowrk.
 
 > [!NOTE]
 >Before Running the programic files, <br>
