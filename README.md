@@ -27,7 +27,7 @@
 ## Website
 The demo view of the Uniport-id retrieval  website is shown below:<br>
 <br>
-<img src="entry.png" alt="Website home page" width="500" height="200">
+<img src="entry.png" alt="Website home page" align="center" width="500" height="200">
 
-<img src="unport.png" alt="result.png" width="500" height="200">
+<img src="unport.png" alt="result.png" align="center" width="500" height="200">
 <br>
